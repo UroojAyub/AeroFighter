@@ -1,0 +1,87 @@
+
+<html>
+<head>
+<style>
+     
+
+
+	@keyframes animatedBackground {
+		to { background-position: -100% 0%; }
+	}
+
+	body {
+    overflow:hidden;
+    }
+	
+	div#sky	{ 
+	width: 500% ;
+	height: 100%; 
+	background-image: url("Images/sky.png");
+	background-position: 0px 0px;
+	background-repeat: repeat-x;
+	animation: animatedBackground 50s linear infinite;
+	}
+	
+	div#plane{ 
+	position:absolute;
+	width: 200px ;
+	height: 104px; 
+	top:20%;
+	z-index:1;
+	background-image: url("Images/Plane.png");
+	}
+	
+	#plane:target{
+	top:50%;
+	
+	}
+	a{ color:#ffffff}
+	div#up{
+	position:absolute;
+    width:100px;height:30px;
+	border-radius: 55px;
+	top:80%;
+	z-index:1;
+    text-align:center;
+    background:brown;
+    font-size:20px;
+    font-family: 'Arial', sans-serif;
+    color:#ffffff
+	}
+	
+	div#up:active{
+	 background:black;
+	}
+	
+	div#down:active{
+	 background:black;
+	}
+	
+	div#down{
+	position:absolute;
+    width:100px;height:30px;
+	border-radius: 55px;
+	top: 90%;
+	z-index:1;
+    text-align:center;
+    background:brown;
+    font-size:20px;
+    font-family: 'Arial', sans-serif;
+    color:#ffffff
+	}
+  
+  
+
+</style>
+</head>
+<body >
+ <div id="sky">
+	<div id="plane"></div>
+	<div id="up"><a href="#sky" >UP<a></div>
+	
+	<div id="down"><a href="#plane" >DOWN<a></div>
+ </div>
+ 
+
+</body>
+</html>
