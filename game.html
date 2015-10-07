@@ -1,6 +1,8 @@
 
 <html>
 <head>
+
+
 <style>
      
 
@@ -14,12 +16,12 @@
     }
 	
 	div#sky	{ 
-	width: 500% ;
+	width: 300% ;
 	height: 100%; 
 	background-image: url("Images/sky.png");
 	background-position: 0px 0px;
 	background-repeat: repeat-x;
-	animation: animatedBackground 50s linear infinite;
+	animation: animatedBackground 10s linear infinite;
 	}
 	
 	div#plane{ 
@@ -31,12 +33,8 @@
 	background-image: url("Images/Plane.png");
 	}
 	
-	#plane:target{
-	top:50%;
-	
-	}
 	a{ color:#ffffff}
-	div#up{
+	#up{
 	position:absolute;
     width:100px;height:30px;
 	border-radius: 55px;
@@ -49,15 +47,7 @@
     color:#ffffff
 	}
 	
-	div#up:active{
-	 background:black;
-	}
-	
-	div#down:active{
-	 background:black;
-	}
-	
-	div#down{
+	#down{
 	position:absolute;
     width:100px;height:30px;
 	border-radius: 55px;
@@ -70,18 +60,48 @@
     color:#ffffff
 	}
   
-  
+	[class*="obs"]{
+	position:absolute;
+	width:100px;
+	height:51px;
+	background-image: url("Images/obstacle.png");
+	}
+	@keyframes animatedObstacle {
+		to {left: -100% }        
+	}
+	.obs1{left:120%;top:7%;animation: animatedObstacle 13s linear infinite;}
+	.obs2{left:150%;top:55%;animation: animatedObstacle 10s linear infinite;}
+	.obs3{left:160%;top:66%;animation: animatedObstacle 12s linear infinite;}
+	.obs4{left:170%;top:108%;animation: animatedObstacle 9s linear infinite;}
+	.obs5{left:189%;top:150%;animation: animatedObstacle 7s linear infinite;}
+	.obs6{left:200%;top:100%;animation: animatedObstacle 8s linear infinite;}
+	
+	
+	#enemy {
+	 position:absolute;
+	 width:100px;
+	 height:51px;
+	 background-image: url("Images/enemy.png"); 
+	}
+
 
 </style>
+ <script src="movement.js"></script> 
+ 
 </head>
 <body >
  <div id="sky">
 	<div id="plane"></div>
-	<div id="up"><a href="#sky" >UP<a></div>
+	<div class="obs1"></div>
+	<div class="obs2"></div>
+	<div class="obs3"></div>
+	<div class="obs4"></div>
+	<div class="obs5"></div>
+	<div class="obs6"></div>
+
+	<div id="enemy"></div>
 	
-	<div id="down"><a href="#plane" >DOWN<a></div>
  </div>
- 
 
 </body>
 </html>
